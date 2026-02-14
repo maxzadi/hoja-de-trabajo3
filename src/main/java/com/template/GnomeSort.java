@@ -2,19 +2,16 @@ package com.template;
 
 public class GnomeSort {
     int[] array;
-    public GnomeSort(){
-
+    public GnomeSort(int[] array){
+        this.array=array;
     }
 
-    private void sort(){
+    public void sort(){
         int i = 0;
         int n = array.length;
 
         while (i < n) {
-            if (i == 0)
-                i++;
-            if (array[i] >= array[i - 1])
-                i++;
+            if (i == 0 || array[i] >= array[i - 1]) i++;
             else {
                 swap(array, i, i-1);
                 i--;
