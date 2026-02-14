@@ -16,16 +16,29 @@ public class Archivotxt {
 
     private void generar(int cantidad) {
         Random random = new Random();
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter("datos.txt", true))) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter("datos.txt", false))) {
             for(int i=0;i<cantidad;i++){
                 
-                bw.write(random.nextInt(3000));
+                bw.write(String.valueOf(random.nextInt(3000)+1));
                 bw.newLine();
             }
         } catch (IOException e) {
             System.out.println("Error al escribir el archivo");
         }
     }
+
+    public void guardarOrdenado(int[] arr,String nombre) {
+        Random random = new Random();
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(nombre, false))) {
+            for(int i=0;i<arr.length;i++){
+                
+                bw.write(String.valueOf(arr[i]));
+                bw.newLine();
+            }
+        } catch (IOException e) {
+            System.out.println("Error al escribir el archivo");
+        }
+    }    
 
     public int[] leer(){
         int cantidad = 0;

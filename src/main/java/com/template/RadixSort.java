@@ -32,8 +32,8 @@ public class RadixSort {
         int[] count = new int[10];
 
         for (int i = 0; i < n; i++) {
-            int digit = (array[i] / exp) % 10;
-            count[digit]++;
+            int digito = (array[i] / exp) % 10;
+            count[digito]++;
         }
 
         for (int i = 1; i < 10; i++) {
@@ -41,9 +41,9 @@ public class RadixSort {
         }
 
         for (int i = n - 1; i >= 0; i--) {
-            int digit = (array[i] / exp) % 10;
-            output[count[digit] - 1] = array[i];
-            count[digit]--;
+            int digito = (array[i] / exp) % 10;
+            output[count[digito] - 1] = array[i];
+            count[digito]--;
         }
 
         for (int i = 0; i < n; i++) {
